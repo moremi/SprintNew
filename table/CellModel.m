@@ -14,10 +14,14 @@
 
 - (void)updateCellWithDictionary:(NSDictionary *)newData
 {
-    self.title = [newData objectForKey:@"title"];
-    self.subTitle = [newData objectForKey:@"subTitle"];
-    self.imageUrl = [newData objectForKey:@"imageUrl"];
-    self.objectId = [newData objectForKey:@"objectId"];
+    if (![[newData objectForKey:@"updatedAt"] isEqualToString:self.updatedAt])
+    {
+        self.title = [newData objectForKey:@"title"];
+        self.subTitle = [newData objectForKey:@"subTitle"];
+        self.imageUrl = [newData objectForKey:@"imageUrl"];
+        self.objectId = [newData objectForKey:@"objectId"];
+        self.updatedAt = [newData objectForKey:@"updatedAt"];
+    }
 }
 
 @end
