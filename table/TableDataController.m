@@ -164,7 +164,7 @@ NSString *const myCellIdentifier = @"TableViewCell";
     [self saveContext];
 }
 
-- (NSData *)getImageDataWithURL:(NSString *)url
+- (NSData *)ImageDataWithURL:(NSString *)url
 {
     NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:imageEntityName];

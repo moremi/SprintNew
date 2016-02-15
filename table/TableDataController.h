@@ -13,7 +13,7 @@
 
 
 - (void)addImageFromData:(NSData *)imageData withURL:(NSString *)url;
-- (NSData *)getImageDataWithURL:(NSString *)url;
+- (NSData *)ImageDataWithURL:(NSString *)url;
 
 - (void)addCellModelsFromArray:(NSArray *)array activityIndicator:(UIActivityIndicatorView *)activityIndicator;
 
