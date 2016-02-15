@@ -17,5 +17,6 @@
 @dynamic objectId;
 @dynamic subTitle;
 @dynamic title;
+@dynamic updatedAt;
 
 @end
