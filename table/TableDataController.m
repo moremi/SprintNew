@@ -74,6 +74,7 @@ NSString *const myCellIdentifier = @"TableViewCell";
     cell.titleLabel.text = cellModel.title;
     cell.subTitleLabel.text = cellModel.subTitle;
     [self.imageDataSource downloadImageAtURL:cellModel.imageUrl forCell:cell];
+    cell.cellModel = cellModel;
 }
 
 

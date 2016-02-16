@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "TableViewCell.h"
 #import "TableDataController.h"
+#import "DetailViewController.h"
 
 NSString *const dataUrlString = @"https://api.parse.com/1//classes/tableData2";
 NSString *const parseAppID = @"b3Hhp5ALpca7UJFnmtfLUxKq4Bpw91YOG5r5chkE";
@@ -45,6 +46,13 @@ NSString *const parseAppKey = @"pxLQKjBhCGzu82afMLKFtYYIrppeTErapzRAfH7w" ;
 - (IBAction)updateTouch:(id)sender
 {
     [self updateData];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    DetailViewController *detailViewController = (DetailViewController *)[segue destinationViewController];
+    TableViewCell *tableViewCell = (TableViewCell *) sender;
+    detailViewController.cellModel = tableViewCell.cellModel;
 }
 
 - (void)updateData {

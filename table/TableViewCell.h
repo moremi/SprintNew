@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CellModel.h"
 @interface TableViewCell : UITableViewCell
 
 @property (nonatomic,weak) IBOutlet UILabel *titleLabel;
 @property (nonatomic,weak) IBOutlet UILabel *subTitleLabel;
 @property (nonatomic,weak) IBOutlet UIImageView *imageView;
 @property (nonatomic,weak) NSString *imageUrl;
+@property (nonatomic,weak) CellModel *cellModel;
 
 @end
