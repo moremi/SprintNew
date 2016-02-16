@@ -36,7 +36,7 @@
 - (void)downloadImageAtURL:(NSString *)url forCell:(TableViewCell *)cell
 {
     cell.imageUrl = url;
-    NSData *imageData = [self.tableDataController getImageDataWithURL:url];
+    NSData *imageData = [self.tableDataController ImageDataWithURL:url];
     if (imageData != nil) {
         UIImage *image = [UIImage imageWithData:imageData];
         cell.imageView.image = image;
