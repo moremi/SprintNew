@@ -2,7 +2,7 @@
 //  CellModel+CoreDataProperties.m
 //  table
 //
-//  Created by Vlad on 15.02.16.
+//  Created by Vlad on 17.02.16.
 //  Copyright © 2016 Vlad. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -18,5 +18,7 @@
 @dynamic subTitle;
 @dynamic title;
 @dynamic updatedAt;
+@dynamic city;
+@dynamic birthday;
 
 @end

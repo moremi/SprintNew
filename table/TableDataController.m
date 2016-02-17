@@ -225,9 +225,7 @@ NSString *const myCellIdentifier = @"TableViewCell";
     
     
     NSError *error;
-    if (![managedObjectContext save:&error]) {
-        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-    }
+    [self saveContext];
     [activityIndicator stopAnimating];
 }
 

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15A284" minimumToolsVersion="Xcode 7.0">
     <entity name="CellModel" representedClassName="CellModel" syncable="YES">
+        <attribute name="birthday" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="objectId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="subTitle" optional="YES" attributeType="String" syncable="YES"/>
@@ -12,7 +14,7 @@
         <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CellModel" positionX="16" positionY="1287" width="146" height="120"/>
+        <element name="CellModel" positionX="16" positionY="1287" width="146" height="150"/>
         <element name="ImageModel" positionX="27" positionY="1314" width="128" height="75"/>
     </elements>
 </model>
