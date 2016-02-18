@@ -10,6 +10,7 @@
 #import "TableViewCell.h"
 #import "TableDataController.h"
 #import "DetailViewController.h"
+#import "NetworkController.h"
 
 NSString *const dataUrlString = @"https://api.parse.com/1//classes/tableData2";
 NSString *const parseAppID = @"b3Hhp5ALpca7UJFnmtfLUxKq4Bpw91YOG5r5chkE";
@@ -29,10 +30,19 @@ NSString *const parseAppKey = @"pxLQKjBhCGzu82afMLKFtYYIrppeTErapzRAfH7w" ;
 #pragma mark - UIViewController override
 
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.navigationItem setHidesBackButton:YES];
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NetworkController *net = [[NetworkController alloc] init];
+    [net updateData];
+    self.navigationController.navigationItem.backBarButtonItem.enabled = NO;
     self.data = [[TableDataController alloc] initWithTableView:self.tableView];
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 160.0;
@@ -66,6 +76,7 @@ NSString *const parseAppKey = @"pxLQKjBhCGzu82afMLKFtYYIrppeTErapzRAfH7w" ;
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request addValue:parseAppID forHTTPHeaderField:@"X-Parse-Application-Id"];
     [request addValue:parseAppKey forHTTPHeaderField:@"X-Parse-REST-API-Key"];
+    //[request addValue:@"r:X2B7wkiKRKzOipMV2g8RWUiSm" forHTTPHeaderField:@"X-Parse-Session-Token"];
     [[self.session dataTaskWithRequest:request] resume];
 }
 

@@ -21,23 +21,13 @@
         self.imageUrl = [newData objectForKey:@"imageUrl"];
         self.objectId = [newData objectForKey:@"objectId"];
         self.updatedAt = [newData objectForKey:@"updatedAt"];
-        self.city = [newData objectForKey:@"city"];
+        self.content = [newData objectForKey:@"content"];
         
-        NSString *dateString = [[newData objectForKey:@"birthday"] objectForKey:@"iso"];
+        //NSString *dateString = [[newData objectForKey:@"createdAt"] objectForKey:@"iso"];
+        NSString *dateString = [newData objectForKey:@"createdAt"];
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-        self.birthday = [dateFormatter dateFromString:dateString];
-        //NSLog(dateString);
-        NSDate *date = [dateFormatter dateFromString:dateString];
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"yyyy-MM-dd"];
-        
-        //Optionally for time zone conversions
-        [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"..."]];
-        
-        NSString *stringFromDate = [formatter stringFromDate:date];
-        //NSLog(stringFromDate);
-
+        [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
+        self.createdAt = [dateFormatter dateFromString:dateString];
     }
 }
 

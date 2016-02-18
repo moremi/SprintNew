@@ -9,10 +9,12 @@
 #import "DetailViewController.h"
 
 @interface DetailViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *lastNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *cityLabel;
-@property (weak, nonatomic) IBOutlet UILabel *birthdayLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *subTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @end
 
 @implementation DetailViewController
@@ -20,20 +22,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _nameLabel.text = [NSString stringWithFormat:@"First Name: %@",self.cellModel.title];
-    _lastNameLabel.text = [NSString stringWithFormat:@"Last Name: %@",self.cellModel.subTitle];
-    _cityLabel.text = [NSString stringWithFormat:@"City: %@",self.cellModel.city];
-    NSDate *date = self.cellModel.birthday;
-    
-   // _birthdayLabel.text = stringFromDate;
+    self.titleLabel.text = self.cellModel.title;
+    self.subTitleLabel.text = self.cellModel.subTitle;
+    NSDate *date = self.cellModel.createdAt;
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd"];
-    
-    //Optionally for time zone conversions
-    [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"..."]];
-    
-    NSString *stringFromDate = [formatter stringFromDate:date];
-    NSLog(stringFromDate);
+    self.dateLabel.text = [formatter stringFromDate:date];
+    self.contentLabel.text = self.cellModel.content;
     
 }
 

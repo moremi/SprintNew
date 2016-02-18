@@ -18,6 +18,7 @@
 		F54322BD1C723E9A00B3B95D /* tableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F54322BC1C723E9A00B3B95D /* tableTests.m */; };
 		F54322C61C73145D00B3B95D /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F54322C51C73145D00B3B95D /* AuthViewController.m */; };
 		F54322C91C732E0800B3B95D /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F54322C81C732E0800B3B95D /* DetailViewController.m */; };
+		F56F22611C760754006E6DDF /* NetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = F56F22601C760754006E6DDF /* NetworkController.m */; };
 		F58701751C71D42300562D3E /* ImageModel+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F58701721C71D42300562D3E /* ImageModel+CoreDataProperties.m */; };
 		F58701761C71D42300562D3E /* ImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F58701741C71D42300562D3E /* ImageModel.m */; };
 		F5D5185A1C61FAF5006297B7 /* ImageDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D518591C61FAF5006297B7 /* ImageDataSource.m */; };
@@ -60,6 +61,8 @@
 		F54322C51C73145D00B3B95D /* AuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthViewController.m; sourceTree = "<group>"; };
 		F54322C71C732E0800B3B95D /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		F54322C81C732E0800B3B95D /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		F56F225F1C760754006E6DDF /* NetworkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkController.h; sourceTree = "<group>"; };
+		F56F22601C760754006E6DDF /* NetworkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkController.m; sourceTree = "<group>"; };
 		F58701711C71D42300562D3E /* ImageModel+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ImageModel+CoreDataProperties.h"; sourceTree = "<group>"; };
 		F58701721C71D42300562D3E /* ImageModel+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ImageModel+CoreDataProperties.m"; sourceTree = "<group>"; };
 		F58701731C71D42300562D3E /* ImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageModel.h; sourceTree = "<group>"; };
@@ -170,6 +173,8 @@
 				F5E7C94D1C6B51F1003A92BD /* TableDataController.m */,
 				F54322C71C732E0800B3B95D /* DetailViewController.h */,
 				F54322C81C732E0800B3B95D /* DetailViewController.m */,
+				F56F225F1C760754006E6DDF /* NetworkController.h */,
+				F56F22601C760754006E6DDF /* NetworkController.m */,
 				F55030FF1C6DD54600B1AD5B /* ImageDataSource */,
 			);
 			name = Controller;
@@ -309,6 +314,7 @@
 				F54322C61C73145D00B3B95D /* AuthViewController.m in Sources */,
 				F52BBD011C57C112002D4D8E /* TableViewCell.m in Sources */,
 				F5E7C98B1C6B7420003A92BD /* CellModel+CoreDataProperties.m in Sources */,
+				F56F22611C760754006E6DDF /* NetworkController.m in Sources */,
 				F58701751C71D42300562D3E /* ImageModel+CoreDataProperties.m in Sources */,
 				F5D5185A1C61FAF5006297B7 /* ImageDataSource.m in Sources */,
 				F533BFCC1C47D950003D43EE /* main.m in Sources */,
