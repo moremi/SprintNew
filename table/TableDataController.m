@@ -26,6 +26,7 @@ NSString *const myCellIdentifier = @"TableViewCell";
 
 @property (nonatomic,strong) ImageDataSource *imageDataSource;
 @property (nonatomic,strong) ImageDownloader *imageDownloader;
+
 @end
 
 @implementation TableDataController
@@ -56,6 +57,7 @@ NSString *const myCellIdentifier = @"TableViewCell";
         self.tableView = tableView;
         self.imageDownloader = [[ImageDownloader alloc] init];
         self.imageDataSource = [[ImageDataSource alloc] initWithImageDownloader:self.imageDownloader andTableDataController:self];
+        self.imageData = self.imageDataSource;
     }
     return self;
 }
@@ -73,7 +75,10 @@ NSString *const myCellIdentifier = @"TableViewCell";
     CellModel *cellModel = [_fetchedResultsController objectAtIndexPath:indexPath];
     cell.titleLabel.text = cellModel.title;
     cell.subTitleLabel.text = cellModel.subTitle;
-    [self.imageDataSource downloadImageAtURL:cellModel.imageUrl forCell:cell];
+    if (![cellModel.imageUrl isEqualToString:@""] && cellModel.imageUrl!=nil )
+    {
+        [self.imageDataSource downloadImageAtURL:cellModel.imageUrl forCell:cell];
+    }
     cell.cellModel = cellModel;
 }
 
@@ -182,6 +187,15 @@ NSString *const myCellIdentifier = @"TableViewCell";
 {
     NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
     NSDictionary *cellModelData;
+    NSMutableArray *newArray = [dataArray mutableCopy];
+    for (cellModelData in dataArray)
+    {
+        if (![[cellModelData objectForKey:@"owner"]isEqualToString:_user])
+        {
+            [newArray removeObject:cellModelData];
+        }
+    }
+    dataArray = [NSArray arrayWithArray:newArray];
     NSArray *cellModelArray = [self getCellModelArray];
     CellModel *cellModel;
     for (cellModel in cellModelArray)
@@ -230,7 +244,12 @@ NSString *const myCellIdentifier = @"TableViewCell";
 }
 
 
-
+- (CellModel *)newCellModel
+{
+    CellModel *addCellModel = [NSEntityDescription insertNewObjectForEntityForName:entityName
+                                                            inManagedObjectContext:self.managedObjectContext];
+    return addCellModel;
+}
 
 #pragma mark - Core Data stack
 

@@ -18,6 +18,9 @@
 		F54322BD1C723E9A00B3B95D /* tableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F54322BC1C723E9A00B3B95D /* tableTests.m */; };
 		F54322C61C73145D00B3B95D /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F54322C51C73145D00B3B95D /* AuthViewController.m */; };
 		F54322C91C732E0800B3B95D /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F54322C81C732E0800B3B95D /* DetailViewController.m */; };
+		F56787BC1C770176000F0281 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F56787BB1C770176000F0281 /* EditViewController.m */; };
+		F56787BF1C770CF6000F0281 /* SyncController.m in Sources */ = {isa = PBXBuildFile; fileRef = F56787BE1C770CF6000F0281 /* SyncController.m */; };
+		F56787C21C7733F6000F0281 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F56787C11C7733F6000F0281 /* AddViewController.m */; };
 		F56F22611C760754006E6DDF /* NetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = F56F22601C760754006E6DDF /* NetworkController.m */; };
 		F58701751C71D42300562D3E /* ImageModel+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F58701721C71D42300562D3E /* ImageModel+CoreDataProperties.m */; };
 		F58701761C71D42300562D3E /* ImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F58701741C71D42300562D3E /* ImageModel.m */; };
@@ -61,6 +64,12 @@
 		F54322C51C73145D00B3B95D /* AuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthViewController.m; sourceTree = "<group>"; };
 		F54322C71C732E0800B3B95D /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		F54322C81C732E0800B3B95D /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		F56787BA1C770176000F0281 /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
+		F56787BB1C770176000F0281 /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
+		F56787BD1C770CF6000F0281 /* SyncController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncController.h; sourceTree = "<group>"; };
+		F56787BE1C770CF6000F0281 /* SyncController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncController.m; sourceTree = "<group>"; };
+		F56787C01C7733F6000F0281 /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
+		F56787C11C7733F6000F0281 /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
 		F56F225F1C760754006E6DDF /* NetworkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkController.h; sourceTree = "<group>"; };
 		F56F22601C760754006E6DDF /* NetworkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkController.m; sourceTree = "<group>"; };
 		F58701711C71D42300562D3E /* ImageModel+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ImageModel+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -173,8 +182,14 @@
 				F5E7C94D1C6B51F1003A92BD /* TableDataController.m */,
 				F54322C71C732E0800B3B95D /* DetailViewController.h */,
 				F54322C81C732E0800B3B95D /* DetailViewController.m */,
+				F56787BA1C770176000F0281 /* EditViewController.h */,
+				F56787BB1C770176000F0281 /* EditViewController.m */,
+				F56787C01C7733F6000F0281 /* AddViewController.h */,
+				F56787C11C7733F6000F0281 /* AddViewController.m */,
 				F56F225F1C760754006E6DDF /* NetworkController.h */,
 				F56F22601C760754006E6DDF /* NetworkController.m */,
+				F56787BD1C770CF6000F0281 /* SyncController.h */,
+				F56787BE1C770CF6000F0281 /* SyncController.m */,
 				F55030FF1C6DD54600B1AD5B /* ImageDataSource */,
 			);
 			name = Controller;
@@ -309,14 +324,17 @@
 				F5E7C9361C6B4529003A92BD /* Model.xcdatamodeld in Sources */,
 				F54322C91C732E0800B3B95D /* DetailViewController.m in Sources */,
 				F533BFCF1C47D950003D43EE /* AppDelegate.m in Sources */,
+				F56787C21C7733F6000F0281 /* AddViewController.m in Sources */,
 				F5E7C94E1C6B51F1003A92BD /* TableDataController.m in Sources */,
 				F58701761C71D42300562D3E /* ImageModel.m in Sources */,
 				F54322C61C73145D00B3B95D /* AuthViewController.m in Sources */,
 				F52BBD011C57C112002D4D8E /* TableViewCell.m in Sources */,
+				F56787BC1C770176000F0281 /* EditViewController.m in Sources */,
 				F5E7C98B1C6B7420003A92BD /* CellModel+CoreDataProperties.m in Sources */,
 				F56F22611C760754006E6DDF /* NetworkController.m in Sources */,
 				F58701751C71D42300562D3E /* ImageModel+CoreDataProperties.m in Sources */,
 				F5D5185A1C61FAF5006297B7 /* ImageDataSource.m in Sources */,
+				F56787BF1C770CF6000F0281 /* SyncController.m in Sources */,
 				F533BFCC1C47D950003D43EE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

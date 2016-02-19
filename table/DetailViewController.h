@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "CellModel.h"
+#import "TableDataController.h"
+#import "SyncController.h"
 
 @interface DetailViewController : UIViewController
 
 @property (nonatomic,strong) CellModel *cellModel;
-
+@property (nonatomic,strong) TableDataController *tableDataController;
+@property (nonatomic,strong) SyncController *syncController;
 @end

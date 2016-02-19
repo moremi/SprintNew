@@ -7,6 +7,9 @@
 //
 
 #import "DetailViewController.h"
+#import "TableViewCell.h"
+#import "ImageDataSource.h"
+#import "EditViewController.h"
 
 @interface DetailViewController ()
 
@@ -29,12 +32,24 @@
     [formatter setDateFormat:@"yyyy-MM-dd"];
     self.dateLabel.text = [formatter stringFromDate:date];
     self.contentLabel.text = self.cellModel.content;
-    
+    if (![self.cellModel.imageUrl isEqualToString:@""] && self.cellModel.imageUrl!=nil )
+    {
+        TableViewCell *cell = [[TableViewCell alloc] init];
+        cell.imageView = self.imageView;
+        ImageDataSource *imageDataSource = (ImageDataSource *)self.tableDataController.imageData;
+        [imageDataSource downloadImageAtURL:self.cellModel.imageUrl forCell:cell];
+    }
 }
 
 - (IBAction)backClick:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    EditViewController *editViewController = (EditViewController *)segue.destinationViewController;
+    editViewController.detail = self;
 }
 
 @end

@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface AuthViewController : UIViewController
-
+@property (nonatomic,strong) NSString *parseAppID;
+@property (nonatomic,strong) NSString *parseAppKey;
+@property (nonatomic,strong) NSString *parseUrl;
 @end
