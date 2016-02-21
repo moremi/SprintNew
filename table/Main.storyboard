@@ -184,7 +184,6 @@
                                             <outlet property="imageView" destination="QSC-Sz-R2S" id="J8K-gc-WZU"/>
                                             <outlet property="subTitleLabel" destination="40o-t6-NtB" id="XYK-xu-CLG"/>
                                             <outlet property="titleLabel" destination="xFX-KL-OxC" id="sge-fr-qZr"/>
-                                            <segue destination="wrs-wD-9gj" kind="show" identifier="detail" id="M8n-p1-gI4"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -218,6 +217,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="xen-E1-iXK" id="XBe-dT-lBO"/>
                         <outlet property="tableView" destination="yp7-Nw-OX7" id="ZbA-vu-OVE"/>
+                        <segue destination="zhM-mB-Hco" kind="show" identifier="edit" id="MoR-bN-XCG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fTN-Dx-Frk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -233,10 +233,10 @@
                         <viewControllerLayoutGuide type="bottom" id="Y2H-Fi-4ag"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="85s-Zg-ZaC">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Js-dM-4Vi">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="title" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Js-dM-4Vi">
                                 <rect key="frame" x="164" y="20" width="195" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="WwU-qG-opv"/>
@@ -245,14 +245,14 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Ft-9M-iOx">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Ft-9M-iOx">
                                 <rect key="frame" x="16" y="20" width="140" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="OVt-Pb-jLe"/>
                                     <constraint firstAttribute="width" constant="140" id="dIY-0R-ICL"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="subTitle" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qff-3J-DkV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="subTitle" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qff-3J-DkV">
                                 <rect key="frame" x="164" y="56" width="195" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="wnd-Xm-QK3"/>
@@ -261,7 +261,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Kd-jV-jWD">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="date" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Kd-jV-jWD">
                                 <rect key="frame" x="164" y="92" width="195" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="cTZ-l0-U0K"/>
@@ -270,7 +270,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="contentLabel" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ye8-Xk-ESU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="contentLabel" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ye8-Xk-ESU">
                                 <rect key="frame" x="12" y="187" width="351" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="23" id="djr-fj-db4"/>
@@ -300,11 +300,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Подробности" id="qiQ-fP-M9l">
-                        <barButtonItem key="rightBarButtonItem" title="Редактировать" id="ghD-dP-NI9">
-                            <connections>
-                                <segue destination="zhM-mB-Hco" kind="show" id="sxs-fA-84e"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Редактировать" id="ghD-dP-NI9"/>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -317,7 +313,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fgd-wB-IEi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="771.5" y="270.5"/>
+            <point key="canvasLocation" x="739.5" y="951.5"/>
         </scene>
         <!--Редактировать-->
         <scene sceneID="Bxg-Hj-YqR">
@@ -385,7 +381,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAE-92-c12">
-                                <rect key="frame" x="108" y="550" width="158" height="33"/>
+                                <rect key="frame" x="109" y="550" width="158" height="33"/>
                                 <color key="backgroundColor" red="1" green="0.98566119990696421" blue="0.9657272455241569" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="158" id="FJJ-i3-QQq"/>
@@ -447,7 +443,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Taq-um-UfU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1302.5" y="270.5"/>
+            <point key="canvasLocation" x="826" y="237"/>
         </scene>
         <!--Добавить-->
         <scene sceneID="nwC-qe-Cn8">

@@ -15,13 +15,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CellModel (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSDate *createdAt;
-@property (nullable, nonatomic, retain) NSString *imageUrl;
-@property (nullable, nonatomic, retain) NSString *objectId;
-@property (nullable, nonatomic, retain) NSString *subTitle;
-@property (nullable, nonatomic, retain) NSString *title;
-@property (nullable, nonatomic, retain) NSString *updatedAt;
-@property (nullable, nonatomic, retain) NSString *content;
+@property (nonnull, nonatomic, retain) NSDate *createdAt;
+@property (nonnull, nonatomic, retain) NSString *imageUrl;
+@property (nonnull, nonatomic, retain) NSString *objectId;
+@property (nonnull, nonatomic, retain) NSString *subTitle;
+@property (nonnull, nonatomic, retain) NSString *title;
+@property (nonnull, nonatomic, retain) NSString *updatedAt;
+@property (nonnull, nonatomic, retain) NSString *content;
 
 @end
 

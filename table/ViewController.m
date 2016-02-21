@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "TableViewCell.h"
-#import "DetailViewController.h"
+#import "EditViewController.h"
 #import "AddViewController.h"
 #import "SyncController.h"
 
@@ -16,7 +16,7 @@ NSString *const dataUrlString = @"https://api.parse.com/1//classes/tableData2";
 NSString *const parseAppID = @"b3Hhp5ALpca7UJFnmtfLUxKq4Bpw91YOG5r5chkE";
 NSString *const parseAppKey = @"pxLQKjBhCGzu82afMLKFtYYIrppeTErapzRAfH7w" ;
 
-@interface ViewController () <NSURLSessionDataDelegate>
+@interface ViewController () <NSURLSessionDataDelegate, UITableViewDelegate>
 @property (nonatomic,weak) IBOutlet UITableView *tableView;
 @property (nonatomic,weak) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (nonatomic,strong) NSMutableData *fullData;
@@ -46,6 +46,7 @@ NSString *const parseAppKey = @"pxLQKjBhCGzu82afMLKFtYYIrppeTErapzRAfH7w" ;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 160.0;
     self.tableView.dataSource = self.data;
+    self.tableView.delegate = self;
     self.session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:nil];
     
     [self updateData];
@@ -61,18 +62,17 @@ NSString *const parseAppKey = @"pxLQKjBhCGzu82afMLKFtYYIrppeTErapzRAfH7w" ;
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"detail"])
+    if ([segue.identifier isEqualToString:@"edit"])
     {
-        DetailViewController *detailViewController = (DetailViewController *)[segue destinationViewController];
-        TableViewCell *tableViewCell = (TableViewCell *) sender;
-        detailViewController.cellModel = tableViewCell.cellModel;
-        detailViewController.tableDataController = self.data;
-        detailViewController.syncController = self.syncController;
+        EditViewController *editViewController = (EditViewController *)[segue destinationViewController];
+        NSIndexPath *indexPath = (NSIndexPath *) sender;
+        editViewController.tableDataController = self.data;
+        editViewController.indexPath = indexPath;
     }
     else
     {
         AddViewController *addViewController = (AddViewController *)[segue destinationViewController];
-        addViewController.viewController = self;
+        addViewController.tableDataController = self.data;
     }
         
 }
@@ -119,6 +119,13 @@ NSString *const parseAppKey = @"pxLQKjBhCGzu82afMLKFtYYIrppeTErapzRAfH7w" ;
             [self.data addCellModelsFromArray:fetchedArr activityIndicator:self.activityIndicator];
         });
     }
+}
+
+#pragma mark - <UITableViewDelegate>
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"edit" sender:indexPath];
 }
 
 @end

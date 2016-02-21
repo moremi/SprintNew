@@ -16,26 +16,15 @@
 
 @implementation AddViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (IBAction)cancelClick:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)saveClick:(id)sender {
-    CellModel *cellModel = _viewController.data.newCellModel;
-    cellModel.title = _titleText.text;
-    cellModel.subTitle = _subTitleText.text;
-    cellModel.content = _contentText.text;
-    [_viewController.data.syncController createdCellModel:cellModel];
+    NSDictionary *cellData = @{   @"title" : self.titleText.text,
+                               @"subTitle" : self.subTitleText.text,
+                                @"content" : self.contentText.text};
+    [self.tableDataController addCellModelFromCellData:cellData];
     [self.navigationController popViewControllerAnimated:YES];
 }
 

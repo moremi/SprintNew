@@ -18,9 +18,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _titleText.text = self.detail.cellModel.title;
-    _subTitleText.text = self.detail.cellModel.subTitle;
-    _contentText.text = self.detail.cellModel.content;
+    NSDictionary *cellData = [self.tableDataController cellDataAtIndexPath:self.indexPath];
+    
+    self.titleText.text = [cellData valueForKey:@"title"];
+    self.subTitleText.text = [cellData valueForKey:@"subTitle"];
+    self.contentText.text = [cellData valueForKey:@"content"];
 }
 
 - (IBAction)cancelClick:(id)sender {
@@ -28,24 +30,16 @@
 }
 
 - (IBAction)saveClick:(id)sender {
-    CellModel *cellModel = self.detail.cellModel;
-    
-    cellModel.title = _titleText.text;
-    cellModel.subTitle = _subTitleText.text;
-    cellModel.content = _contentText.text;
-    //[self.detail.tableDataController saveContext];
-    [self.detail.syncController updatedCellModel:cellModel];
-    [self.detail viewDidLoad];
+    NSDictionary *cellData = @{   @"title" : self.titleText.text,
+                               @"subTitle" : self.subTitleText.text,
+                                @"content" : self.contentText.text};
+    [self.tableDataController updateCellModelFromCellData:cellData atIndexPath:self.indexPath];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)deleteClick:(id)sender {
-    CellModel *cellModel = self.detail.cellModel;
-    [self.detail.syncController deletedCellModel:cellModel];
-    [cellModel.managedObjectContext deleteObject:cellModel];
-    //[self.detail viewDidLoad];
+    [self.tableDataController deleteCellModelAtIndexPath:self.indexPath];
     [self.navigationController popViewControllerAnimated:YES];
-    [self.detail.navigationController popViewControllerAnimated:YES];
 }
 
 @end

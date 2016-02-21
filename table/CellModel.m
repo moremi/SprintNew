@@ -19,6 +19,10 @@
         self.title = [newData objectForKey:@"title"];
         self.subTitle = [newData objectForKey:@"subTitle"];
         self.imageUrl = [newData objectForKey:@"imageUrl"];
+        if (self.imageUrl == nil)
+        {
+            self.imageUrl = @"";
+        }
         self.objectId = [newData objectForKey:@"objectId"];
         self.updatedAt = [newData objectForKey:@"updatedAt"];
         self.content = [newData objectForKey:@"content"];

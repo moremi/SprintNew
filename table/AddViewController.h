@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ViewController.h"
+#import "TableDataController.h"
 
 @interface AddViewController : UIViewController
-@property (nonatomic,strong) ViewController *viewController;
+@property (nonatomic,weak) TableDataController *tableDataController;
 @end

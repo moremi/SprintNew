@@ -22,21 +22,30 @@
 {
     self = [super init];
     if (self) {
-        _networkController = [[NetworkController alloc] init];
-        _updatedCellModels = [[NSMutableArray alloc] init];
-        _deletedCellModels = [[NSMutableArray alloc] init];
-        _createdCellModels = [[NSMutableArray alloc] init];
+        self.networkController = [[NetworkController alloc] init];
+        self.updatedCellModels = [[NSMutableArray alloc] init];
+        self.deletedCellModels = [[NSMutableArray alloc] init];
+        self.createdCellModels = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
 - (void)updatedCellModel:(CellModel *)cellModel
 {
-    [self.updatedCellModels addObject:cellModel];
+    if (![self.updatedCellModels containsObject:cellModel] && ![self.createdCellModels containsObject:cellModel])
+        [self.updatedCellModels addObject:cellModel];
 }
 
 - (void)deletedCellModel:(CellModel *)cellModel
 {
+    if ([self.updatedCellModels containsObject:cellModel])
+    {
+        [self.updatedCellModels delete:cellModel];
+    }
+    if ([self.createdCellModels containsObject:cellModel])
+    {
+        [self.createdCellModels delete:cellModel];
+    }
     [self.deletedCellModels addObject:cellModel.objectId];
 }
 
@@ -52,25 +61,61 @@
     _networkController.user = vc.user;
     if (_updatedCellModels.count == 0 && _deletedCellModels.count == 0 && _createdCellModels.count == 0)
     {
+        //[viewController updateData];
+    }
+    dispatch_group_t changesToServerDispatchGroup = dispatch_group_create();
+    dispatch_group_notify(changesToServerDispatchGroup, dispatch_get_main_queue(), ^{
         [viewController updateData];
+        NSLog(@"SECOND");
+    });
+    
+    for (CellModel *cellModel in self.updatedCellModels)
+    {
+        dispatch_group_enter(changesToServerDispatchGroup);
+        [self.networkController updateDataCellModel:cellModel withCompletion:^(NSError *error) {
+            if (error)
+            {
+                
+            } else {
+                //[self.updatedCellModels delete:cellModel];
+            }
+            dispatch_group_leave(changesToServerDispatchGroup);
+        }];
     }
     
-    for (CellModel *cellModel in _updatedCellModels)
+    for (NSString *cellModel in self.deletedCellModels)
     {
-        [_networkController updateDataCellModel:cellModel];
-    }
-    for (NSString *cellModel in _deletedCellModels)
-    {
-        [_networkController deleteDataCellModel:cellModel];
-    }
-    for (CellModel *cellModel in _createdCellModels)
-    {
-        [_networkController createDataCellModel:cellModel];
+        dispatch_group_enter(changesToServerDispatchGroup);
+        [self.networkController deleteDataCellModel:cellModel withCompletion:^(NSError *error) {
+            if (error)
+            {
+                
+            } else {
+                //[self.deletedCellModels delete:cellModel];
+            }
+            NSLog(@"FIRST");
+            dispatch_group_leave(changesToServerDispatchGroup);
+        }];
     }
     
-    _updatedCellModels = [[NSMutableArray alloc] init];
-    _deletedCellModels = [[NSMutableArray alloc] init];
-    _createdCellModels = [[NSMutableArray alloc] init];
+    for (CellModel *cellModel in self.createdCellModels)
+    {
+        dispatch_group_enter(changesToServerDispatchGroup);
+        [self.networkController createDataCellModel:cellModel withCompletion:^(NSError *error) {
+            if (error)
+            {
+            
+            } else {
+                //[self.createdCellModels delete:cellModel];
+            }
+            dispatch_group_leave(changesToServerDispatchGroup);
+        }];
+    }
+    
+    self.updatedCellModels = [[NSMutableArray alloc] init];
+    self.createdCellModels = [[NSMutableArray alloc] init];
+    self.deletedCellModels = [[NSMutableArray alloc] init];
+    
 }
 
 @end

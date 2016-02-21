@@ -18,8 +18,8 @@
 @property (nonatomic,strong) NSString *user;
 
 - (void)updateData;
-- (void)updateDataCellModel:(CellModel *)cellModel;
-- (void)createDataCellModel:(CellModel *)cellModel;
-- (void)deleteDataCellModel:(NSString *)cellModel;
+- (void)updateDataCellModel:(CellModel *)cellModel withCompletion:(void (^)(NSError *error))completion;
+- (void)createDataCellModel:(CellModel *)cellModel withCompletion:(void (^)(NSError *error))completion;
+- (void)deleteDataCellModel:(NSString *)cellModel withCompletion:(void (^)(NSError *error))completion;
 
 @end

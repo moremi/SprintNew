@@ -49,7 +49,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     EditViewController *editViewController = (EditViewController *)segue.destinationViewController;
-    editViewController.detail = self;
+
 }
 
 @end

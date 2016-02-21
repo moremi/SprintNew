@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DetailViewController.h"
+#import "TableDataController.h"
 
 @interface EditViewController : UIViewController
-@property (nonatomic,weak) DetailViewController *detail;
+@property (nonatomic,weak) TableDataController *tableDataController;
+@property (nonatomic,strong) NSIndexPath *indexPath;
 @end

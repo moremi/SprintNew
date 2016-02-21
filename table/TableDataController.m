@@ -72,7 +72,7 @@ NSString *const myCellIdentifier = @"TableViewCell";
 }
 
 - (void)configureCell:(TableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    CellModel *cellModel = [_fetchedResultsController objectAtIndexPath:indexPath];
+    CellModel *cellModel = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.titleLabel.text = cellModel.title;
     cell.subTitleLabel.text = cellModel.subTitle;
     if (![cellModel.imageUrl isEqualToString:@""] && cellModel.imageUrl!=nil )
@@ -82,7 +82,6 @@ NSString *const myCellIdentifier = @"TableViewCell";
     cell.cellModel = cellModel;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:myCellIdentifier];
@@ -90,13 +89,11 @@ NSString *const myCellIdentifier = @"TableViewCell";
     return cell;
 }
 
-
 #pragma mark - <NSFetchedResultsControllerDelegate>
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView beginUpdates];
 }
-
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
     UITableView *tableView = self.tableView;
@@ -123,7 +120,6 @@ NSString *const myCellIdentifier = @"TableViewCell";
     }
 }
 
-
 - (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id )sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
     
     switch(type) {
@@ -137,7 +133,6 @@ NSString *const myCellIdentifier = @"TableViewCell";
     }
 }
 
-
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView endUpdates];
     
@@ -145,26 +140,11 @@ NSString *const myCellIdentifier = @"TableViewCell";
 
 #pragma mark - CoreData updating data
 
-- (NSArray *)getCellModelArray
-{
-    NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:entityName];
-    NSArray *cellModelArray = [managedObjectContext executeFetchRequest:fetchRequest error:nil];
-    return cellModelArray;
-}
-
-- (CellModel *)getCellModelAtIndex:(NSUInteger)index;
-{
-    
-    CellModel *cellModel = (CellModel *) [[self getCellModelArray] objectAtIndex:index];
-    return cellModel;
-}
-
 - (void)addImageFromData:(NSData *)imageData withURL:(NSString *)url
 {
     NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
     ImageModel *imageModel = [NSEntityDescription insertNewObjectForEntityForName:imageEntityName
-                                  inManagedObjectContext:managedObjectContext];
+                                                           inManagedObjectContext:managedObjectContext];
     imageModel.imageUrl = url;
     imageModel.imageData = imageData;
     [self saveContext];
@@ -183,6 +163,14 @@ NSString *const myCellIdentifier = @"TableViewCell";
     return nil;
 }
 
+- (NSArray *)cellModelArray
+{
+    NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:entityName];
+    NSArray *cellModelArray = [managedObjectContext executeFetchRequest:fetchRequest error:nil];
+    return cellModelArray;
+}
+
 - (void)addCellModelsFromArray:(NSArray *)dataArray activityIndicator:(UIActivityIndicatorView *)activityIndicator
 {
     NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
@@ -196,7 +184,7 @@ NSString *const myCellIdentifier = @"TableViewCell";
         }
     }
     dataArray = [NSArray arrayWithArray:newArray];
-    NSArray *cellModelArray = [self getCellModelArray];
+    NSArray *cellModelArray = [self cellModelArray];
     CellModel *cellModel;
     for (cellModel in cellModelArray)
     {
@@ -236,19 +224,48 @@ NSString *const myCellIdentifier = @"TableViewCell";
             [addCellModel updateCellWithDictionary:cellModelData];
         }
     }
-    
-    
-    NSError *error;
     [self saveContext];
     [activityIndicator stopAnimating];
 }
 
 
-- (CellModel *)newCellModel
+#pragma mark - Add/Edit CellModel
+
+- (NSDictionary *)cellDataAtIndexPath:(NSIndexPath *)indexPath
 {
-    CellModel *addCellModel = [NSEntityDescription insertNewObjectForEntityForName:entityName
-                                                            inManagedObjectContext:self.managedObjectContext];
-    return addCellModel;
+    CellModel *cellModel = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    NSDictionary *cellData = @{    @"title" : cellModel.title,
+                                   @"subTitle" : cellModel.subTitle,
+                                   @"content" : cellModel.content,
+                                   @"imageUrl" : cellModel.imageUrl};
+    return cellData;
+}
+
+- (void)updateCellModelFromCellData:(NSDictionary *)cellData atIndexPath:(NSIndexPath *)indexPath
+{
+    CellModel *cellModel = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cellModel.title = [cellData valueForKey:@"title"];
+    cellModel.subTitle = [cellData valueForKey:@"subTitle"];
+    cellModel.content = [cellData valueForKey:@"content"];
+    [self.syncController updatedCellModel:cellModel];
+}
+
+- (void)addCellModelFromCellData:(NSDictionary *)cellData
+{
+    CellModel *cellModel = [NSEntityDescription insertNewObjectForEntityForName:entityName
+                                                         inManagedObjectContext:self.managedObjectContext];
+    cellModel.title = [cellData valueForKey:@"title"];
+    cellModel.subTitle = [cellData valueForKey:@"subTitle"];
+    cellModel.content = [cellData valueForKey:@"content"];
+    cellModel.imageUrl = @"";
+    [self.syncController createdCellModel:cellModel];
+}
+
+- (void)deleteCellModelAtIndexPath:(NSIndexPath *)indexPath
+{
+    CellModel *cellModel = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [self.syncController deletedCellModel:cellModel];
+    [self.managedObjectContext deleteObject:cellModel];
 }
 
 #pragma mark - Core Data stack
@@ -289,7 +306,6 @@ NSString *const myCellIdentifier = @"TableViewCell";
     return _persistentStoreCoordinator;
 }
 
-
 - (NSManagedObjectContext *)managedObjectContext {
     if (_managedObjectContext != nil) {
         return _managedObjectContext;
@@ -311,7 +327,7 @@ NSString *const myCellIdentifier = @"TableViewCell";
     if (managedObjectContext != nil) {
         NSError *error = nil;
         if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-            NSLog(@"Unresolved error %@, %@", error);
+            NSLog(@"Unresolved error %@", error);
         }
     }
     });
