@@ -19,8 +19,19 @@
         self.title = [newData objectForKey:@"title"];
         self.subTitle = [newData objectForKey:@"subTitle"];
         self.imageUrl = [newData objectForKey:@"imageUrl"];
+        if (self.imageUrl == nil)
+        {
+            self.imageUrl = @"";
+        }
         self.objectId = [newData objectForKey:@"objectId"];
         self.updatedAt = [newData objectForKey:@"updatedAt"];
+        self.content = [newData objectForKey:@"content"];
+        
+        //NSString *dateString = [[newData objectForKey:@"createdAt"] objectForKey:@"iso"];
+        NSString *dateString = [newData objectForKey:@"createdAt"];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
+        self.createdAt = [dateFormatter dateFromString:dateString];
     }
 }
 

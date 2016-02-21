@@ -7,8 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AuthViewController.h"
+#import "TableDataController.h"
 
-@interface ViewController : UIViewController 
+@interface ViewController : UIViewController
+@property (nonatomic,strong) NSString *token;
+@property (nonatomic,strong) NSString *user;
+@property (nonatomic,weak) AuthViewController *authViewController;
+@property (nonatomic,strong) TableDataController *data;
+
+- (void)updateData;
 
 @end
 
