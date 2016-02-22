@@ -17,7 +17,6 @@
 		F533BFD71C47D950003D43EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F533BFD61C47D950003D43EE /* Assets.xcassets */; };
 		F54322BD1C723E9A00B3B95D /* tableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F54322BC1C723E9A00B3B95D /* tableTests.m */; };
 		F54322C61C73145D00B3B95D /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F54322C51C73145D00B3B95D /* AuthViewController.m */; };
-		F54322C91C732E0800B3B95D /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F54322C81C732E0800B3B95D /* DetailViewController.m */; };
 		F56787BC1C770176000F0281 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F56787BB1C770176000F0281 /* EditViewController.m */; };
 		F56787BF1C770CF6000F0281 /* SyncController.m in Sources */ = {isa = PBXBuildFile; fileRef = F56787BE1C770CF6000F0281 /* SyncController.m */; };
 		F56787C21C7733F6000F0281 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F56787C11C7733F6000F0281 /* AddViewController.m */; };
@@ -62,8 +61,6 @@
 		F54322BE1C723E9A00B3B95D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F54322C41C73145D00B3B95D /* AuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthViewController.h; sourceTree = "<group>"; };
 		F54322C51C73145D00B3B95D /* AuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthViewController.m; sourceTree = "<group>"; };
-		F54322C71C732E0800B3B95D /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		F54322C81C732E0800B3B95D /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		F56787BA1C770176000F0281 /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
 		F56787BB1C770176000F0281 /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
 		F56787BD1C770CF6000F0281 /* SyncController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncController.h; sourceTree = "<group>"; };
@@ -180,8 +177,6 @@
 				F533BFD11C47D950003D43EE /* ViewController.m */,
 				F5E7C94C1C6B51F1003A92BD /* TableDataController.h */,
 				F5E7C94D1C6B51F1003A92BD /* TableDataController.m */,
-				F54322C71C732E0800B3B95D /* DetailViewController.h */,
-				F54322C81C732E0800B3B95D /* DetailViewController.m */,
 				F56787BA1C770176000F0281 /* EditViewController.h */,
 				F56787BB1C770176000F0281 /* EditViewController.m */,
 				F56787C01C7733F6000F0281 /* AddViewController.h */,
@@ -322,7 +317,6 @@
 				28DB80F41C5BAE4600A48737 /* ImageDownloader.m in Sources */,
 				F533BFD21C47D950003D43EE /* ViewController.m in Sources */,
 				F5E7C9361C6B4529003A92BD /* Model.xcdatamodeld in Sources */,
-				F54322C91C732E0800B3B95D /* DetailViewController.m in Sources */,
 				F533BFCF1C47D950003D43EE /* AppDelegate.m in Sources */,
 				F56787C21C7733F6000F0281 /* AddViewController.m in Sources */,
 				F5E7C94E1C6B51F1003A92BD /* TableDataController.m in Sources */,

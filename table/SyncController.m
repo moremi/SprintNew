@@ -54,21 +54,10 @@
     [self.createdCellModels addObject:cellModel];
 }
 
-- (void)syncModelsViewController:(id)viewController
+- (void)syncModelsWithCompletion:(void (^)(NSError *, NSArray *))completion
 {
-    ViewController *vc = (ViewController *)viewController;
-    _networkController.viewController = vc;
-    _networkController.user = vc.user;
-    if (_updatedCellModels.count == 0 && _deletedCellModels.count == 0 && _createdCellModels.count == 0)
-    {
-        //[viewController updateData];
-    }
+    self.networkController.user = self.user;
     dispatch_group_t changesToServerDispatchGroup = dispatch_group_create();
-    dispatch_group_notify(changesToServerDispatchGroup, dispatch_get_main_queue(), ^{
-        [viewController updateData];
-        NSLog(@"SECOND");
-    });
-    
     for (CellModel *cellModel in self.updatedCellModels)
     {
         dispatch_group_enter(changesToServerDispatchGroup);
@@ -93,7 +82,6 @@
             } else {
                 //[self.deletedCellModels delete:cellModel];
             }
-            NSLog(@"FIRST");
             dispatch_group_leave(changesToServerDispatchGroup);
         }];
     }
@@ -111,6 +99,14 @@
             dispatch_group_leave(changesToServerDispatchGroup);
         }];
     }
+    
+    dispatch_group_notify(changesToServerDispatchGroup, dispatch_get_main_queue(), ^{
+        [self.networkController updateDataWithCompletion:^(NSError *error, NSArray *array) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion(error,array);
+            });
+        }];
+    });
     
     self.updatedCellModels = [[NSMutableArray alloc] init];
     self.createdCellModels = [[NSMutableArray alloc] init];

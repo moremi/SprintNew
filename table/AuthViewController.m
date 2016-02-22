@@ -48,7 +48,6 @@
     
     ViewController *viewController = (ViewController *)[segue destinationViewController];
     viewController.token = self.sessionToken;
-    viewController.authViewController = self;
     viewController.user = self.user;
 }
 

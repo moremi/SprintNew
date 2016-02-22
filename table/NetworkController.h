@@ -8,16 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "CellModel.h"
-#import "ViewController.h"
 
 @interface NetworkController : NSObject
 @property (nonatomic,strong) NSString *parseAppID;
 @property (nonatomic,strong) NSString *parseAppKey;
 @property (nonatomic,strong) NSString *parseUrl;
-@property (nonatomic,strong) ViewController *viewController;
 @property (nonatomic,strong) NSString *user;
 
-- (void)updateData;
+- (void)updateDataWithCompletion:(void (^)(NSError *error, NSArray *array))completion;
 - (void)updateDataCellModel:(CellModel *)cellModel withCompletion:(void (^)(NSError *error))completion;
 - (void)createDataCellModel:(CellModel *)cellModel withCompletion:(void (^)(NSError *error))completion;
 - (void)deleteDataCellModel:(NSString *)cellModel withCompletion:(void (^)(NSError *error))completion;

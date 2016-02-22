@@ -90,6 +90,26 @@
     }] resume];
 }
 
+- (void)updateDataWithCompletion:(void (^)(NSError *, NSArray *))completion
+{
+    NSString *urlString = [NSString stringWithFormat:@"%@/classes/tableData2",self.parseUrl];
+    NSURL *url = [[NSURL alloc] initWithString:urlString];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url
+                                                           cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+                                                       timeoutInterval:10.0];
+    [request setHTTPMethod:@"GET"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request addValue:self.parseAppID forHTTPHeaderField:@"X-Parse-Application-Id"];
+    [request addValue:self.parseAppKey forHTTPHeaderField:@"X-Parse-REST-API-Key"];
+    //[request addValue:@"r:X2B7wkiKRKzOipMV2g8RWUiSm" forHTTPHeaderField:@"X-Parse-Session-Token"];
+    [[self.session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSError *jsonError = nil;
+        NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
+        NSArray *fetchedArr = [jsonArray objectForKey:@"results"];
+        completion(error,fetchedArr);
+    }] resume];
+}
+
 
 #pragma mark - <NSURLSessionDataDelegate>
 
@@ -112,8 +132,8 @@
     }
     else
     {
-        NSError *jsonError = nil;
-        NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData:self.fullData options:kNilOptions error:&jsonError];
+//        NSError *jsonError = nil;
+//        NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData:self.fullData options:kNilOptions error:&jsonError];
         //self.sessionToken = [jsonArray objectForKey:@"sessionToken"];
     }
 }

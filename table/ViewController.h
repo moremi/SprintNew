@@ -13,10 +13,7 @@
 @interface ViewController : UIViewController
 @property (nonatomic,strong) NSString *token;
 @property (nonatomic,strong) NSString *user;
-@property (nonatomic,weak) AuthViewController *authViewController;
 @property (nonatomic,strong) TableDataController *data;
-
-- (void)updateData;
 
 @end
 
