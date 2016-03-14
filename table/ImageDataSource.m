@@ -54,7 +54,9 @@
 
 - (void)imageDownloader:(ImageDownloader *)downloader didDownloadImage:(NSData *)image atURL:(NSString *)url
 {
-    [self.tableDataController addImageFromData:image withURL:url];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableDataController addImageFromData:image withURL:url];
+    });
     NSArray *cellsArray = [self.cellsWithLoadingImages copy];
     for (TableViewCell *cell in cellsArray)
     {
