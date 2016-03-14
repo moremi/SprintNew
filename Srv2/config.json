@@ -1,0 +1,23 @@
+{
+    "port": 3333,
+    "security": {
+        "tokenLife" : 3600
+    },
+    "mongoose": {
+        "uri": "mongodb://localhost/test"
+    },
+    "default": {
+        "api": {
+            "version" : "v1"
+        },
+        "user": {
+            "username": "admin",
+            "password": "vlad"
+        },
+        "client": {
+            "name": "Sprint Vasiuk Vlad App",
+            "clientId": "vasiuk_vlad",
+            "clientSecret": "fheH@!(HR#@*&G$RGfewNCMZC28fh9sdj@!E@F*H@#*F!(FH(HWEF*&!@HF(!@FH#*@H!"
+        }
+    }
+}

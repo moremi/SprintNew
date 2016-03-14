@@ -10,15 +10,16 @@
 #import "TableViewCell.h"
 #import "EditViewController.h"
 #import "AddViewController.h"
-#import "SyncController.h"
 
 @interface ViewController () <UITableViewDelegate>
 @property (nonatomic,weak) IBOutlet UITableView *tableView;
 @property (nonatomic,weak) IBOutlet UIActivityIndicatorView *activityIndicator;
-@property (nonatomic,strong) SyncController *syncController;
 @end
 
 @implementation ViewController
+
+
+
 
 #pragma mark - UIViewController override
 
@@ -35,7 +36,6 @@
     self.navigationController.navigationItem.backBarButtonItem.enabled = NO;
     self.data = [[TableDataController alloc] initWithTableView:self.tableView];
     self.data.user = self.user;
-    self.syncController = [[SyncController alloc] init];
     self.syncController.activityIndicator = self.activityIndicator;
     self.syncController.user = self.user;
     self.data.syncController = self.syncController;

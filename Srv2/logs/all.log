@@ -1,0 +1,147 @@
+{"level":"info","message":"Express server listening on port 1337","timestamp":"2016-03-12T11:13:57.858Z"}
+{"level":"error","message":"Connection error: failed to connect to [localhost:27017]","timestamp":"2016-03-12T11:13:57.866Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-12T11:36:17.176Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-12T11:36:17.202Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-12T11:36:38.446Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-12T11:38:38.972Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-12T11:38:39.002Z"}
+{"level":"error","message":"Connection error: Cannot read property 'length' of undefined","timestamp":"2016-03-12T11:38:39.005Z"}
+{"level":"error","message":"Connection error: Cannot read property 'length' of undefined","timestamp":"2016-03-12T11:38:39.006Z"}
+{"level":"error","message":"Connection error: Cannot read property 'length' of undefined","timestamp":"2016-03-12T11:38:39.007Z"}
+{"level":"error","message":"Connection error: Cannot read property 'length' of undefined","timestamp":"2016-03-12T11:38:39.007Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-12T11:38:55.318Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-12T11:42:09.835Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-12T11:42:09.902Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-12T12:10:10.635Z"}
+{"level":"info","message":"New user - myapi:abc1234","timestamp":"2016-03-12T12:10:10.689Z"}
+{"level":"info","message":"New client - android:SomeRandomCharsAndNumbers","timestamp":"2016-03-12T12:10:10.692Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-12T12:10:37.271Z"}
+{"level":"info","message":"New user - myapi:abc1234","timestamp":"2016-03-12T12:10:37.308Z"}
+{"level":"info","message":"New client - android:SomeRandomCharsAndNumbers","timestamp":"2016-03-12T12:10:37.311Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-12T12:10:43.221Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-12T12:10:43.258Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-12T12:17:16.066Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-12T12:17:16.107Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-12T12:17:24.083Z"}
+{"level":"info","message":"New user - myapi:abc1234","timestamp":"2016-03-12T12:17:24.158Z"}
+{"level":"info","message":"New client - android:SomeRandomCharsAndNumbers","timestamp":"2016-03-12T12:17:24.160Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-12T12:23:03.121Z"}
+{"level":"info","message":"New user - myapi:abc1234","timestamp":"2016-03-12T12:23:05.823Z"}
+{"level":"info","message":"New client - android:SomeRandomCharsAndNumbers","timestamp":"2016-03-12T12:23:05.827Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-12T12:23:29.096Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-12T12:23:29.131Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-12T14:02:12.325Z"}
+{"level":"info","message":"New user - admin:vlad","timestamp":"2016-03-12T14:02:12.364Z"}
+{"level":"info","message":"New client - vasiuk_vlad:fheH@!(HR#@*&G$RGfewNCMZC28fh9sdj@!E@F*H@#*F!(FH(HWEF*&!@HF(!@FH#*@H!(@(D#@*&R$*&H!(","timestamp":"2016-03-12T14:02:12.367Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-12T14:02:19.960Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-12T14:02:19.999Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-12T14:03:19.941Z"}
+{"level":"info","message":"New user - admin:vlad","timestamp":"2016-03-12T14:03:19.984Z"}
+{"level":"info","message":"New client - vasiuk_vlad:fheH@!(HR#@*&G$RGfewNCMZC28fh9sdj@!E@F*H@#*F!(FH(HWEF*&!@HF(!@FH#*@H!","timestamp":"2016-03-12T14:03:19.986Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-12T14:03:25.151Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-12T14:03:25.186Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-12T15:15:59.842Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-12T15:15:59.880Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-12T15:18:24.761Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-12T15:18:24.801Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-12T15:24:20.392Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-12T15:24:20.428Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-13T08:52:06.872Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-13T08:52:06.913Z"}
+{"level":"error","message":"Internal error(400): Article validation failed","timestamp":"2016-03-13T09:13:59.482Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-13T09:17:15.623Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-13T09:17:15.659Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-13T09:17:19.585Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-13T09:17:19.626Z"}
+{"level":"error","message":"Internal error(400): Article validation failed","timestamp":"2016-03-13T09:17:39.884Z"}
+{"level":"error","message":"Internal error(400): Article validation failed","timestamp":"2016-03-13T09:19:04.280Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-13T09:19:43.662Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-13T09:19:43.705Z"}
+{"level":"error","message":"Internal error(400): Article validation failed","timestamp":"2016-03-13T09:19:54.671Z"}
+{"level":"error","message":"Internal error(400): Article validation failed","timestamp":"2016-03-13T09:20:13.328Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-13T09:21:04.328Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-13T09:21:04.367Z"}
+{"level":"error","message":"Internal error(400): Article validation failed","timestamp":"2016-03-13T09:21:09.016Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-13T09:21:53.846Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-13T09:21:53.883Z"}
+{"level":"error","message":"Internal error(400): Article validation failed","timestamp":"2016-03-13T09:22:03.788Z"}
+{"level":"error","message":"Internal error(400): Article validation failed","timestamp":"2016-03-13T09:22:25.929Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-13T09:24:12.200Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-13T09:24:12.238Z"}
+{"level":"error","message":"Internal error(400): Article validation failed","timestamp":"2016-03-13T09:24:18.310Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-13T09:24:43.607Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-13T09:24:43.650Z"}
+{"level":"info","message":"New article created with id: 56e531e186a294eb04370b21","timestamp":"2016-03-13T09:24:49.814Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-13T09:25:49.559Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-13T09:25:49.594Z"}
+{"level":"info","message":"New article created with id: 56e532250e0ed3ee04afbcf9","timestamp":"2016-03-13T09:25:57.187Z"}
+{"level":"info","message":"New article created with id: 56e5322d0e0ed3ee04afbcfa","timestamp":"2016-03-13T09:26:05.024Z"}
+{"level":"error","message":"Internal error(400): Article validation failed","timestamp":"2016-03-13T09:26:08.389Z"}
+{"level":"error","message":"Internal error(400): Article validation failed","timestamp":"2016-03-13T09:26:18.146Z"}
+{"level":"error","message":"Internal error(400): Article validation failed","timestamp":"2016-03-13T09:26:24.104Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-13T09:26:46.994Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-13T09:26:47.033Z"}
+{"level":"info","message":"New article created with id: 56e5325c113c16ef042d3866","timestamp":"2016-03-13T09:26:52.447Z"}
+{"level":"info","message":"New article created with id: 56e5325f113c16ef042d3867","timestamp":"2016-03-13T09:26:55.152Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-13T09:28:17.527Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-13T09:28:17.565Z"}
+{"level":"info","message":"New article created with id: 56e532c182855d0b05bc0ddd","timestamp":"2016-03-13T09:28:33.896Z"}
+{"level":"info","message":"New article created with id: 56e5332482855d0b05bc0de0","timestamp":"2016-03-13T09:30:12.993Z"}
+{"level":"info","message":"New article created with id: 56e5332582855d0b05bc0de1","timestamp":"2016-03-13T09:30:13.156Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-13T11:49:52.109Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-13T11:49:52.150Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-13T11:51:13.645Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-13T11:51:13.684Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-13T11:53:07.309Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-13T11:53:07.355Z"}
+{"level":"info","message":"Article with id: 56e5332582855d0b05bc0de1 updated","timestamp":"2016-03-13T11:53:29.133Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-13T11:54:34.479Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-13T11:54:34.516Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-13T11:54:55.398Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-13T11:54:55.439Z"}
+{"level":"info","message":"Article with id: 56e5332582855d0b05bc0de1 updated","timestamp":"2016-03-13T11:55:03.840Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-13T11:56:37.061Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-13T11:56:37.101Z"}
+{"level":"info","message":"Article with id: 56e5332582855d0b05bc0de1 updated","timestamp":"2016-03-13T11:56:43.422Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-13T12:32:18.896Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-13T12:32:18.931Z"}
+{"level":"info","message":"Article removed","timestamp":"2016-03-13T12:33:37.402Z"}
+{"level":"info","message":"Article removed","timestamp":"2016-03-13T12:33:43.135Z"}
+{"level":"info","message":"Article removed","timestamp":"2016-03-13T12:33:48.172Z"}
+{"level":"info","message":"Article removed","timestamp":"2016-03-13T12:33:48.176Z"}
+{"level":"info","message":"Article removed","timestamp":"2016-03-13T12:33:48.177Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-13T12:39:38.074Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-13T12:39:38.116Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-13T12:41:01.971Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-13T12:41:02.015Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-13T12:45:41.080Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-13T12:45:41.122Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-13T12:48:41.646Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-13T12:48:41.695Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-13T12:51:16.191Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-13T12:51:16.230Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-13T12:51:49.948Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-13T12:51:49.989Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-13T12:56:55.669Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-13T12:56:55.712Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-13T12:58:31.255Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-13T12:58:31.298Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-13T12:58:56.193Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-13T12:58:56.235Z"}
+{"level":"error","message":"POST 500 Multipart: Boundary not found","timestamp":"2016-03-13T13:44:34.653Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-13T13:51:16.838Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-13T13:51:16.884Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-13T15:08:44.811Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-13T15:08:44.854Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-13T15:09:34.653Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-13T15:09:34.698Z"}
+{"level":"info","message":"Express server listening on port 3333","timestamp":"2016-03-14T11:19:10.344Z"}
+{"level":"info","message":"Connected to DB!","timestamp":"2016-03-14T11:19:10.407Z"}
+{"level":"info","message":"New article created with id: 56e69e5dcb9a1ea902782e3f","timestamp":"2016-03-14T11:19:57.635Z"}
+{"level":"info","message":"Article with id: 56e69e5dcb9a1ea902782e3f updated","timestamp":"2016-03-14T13:12:44.370Z"}
+{"level":"info","message":"Article with id: 56e5332582855d0b05bc0de1 updated","timestamp":"2016-03-14T13:12:57.317Z"}
+{"level":"info","message":"New article created with id: 56e6b8d9cb9a1ea902782e4c","timestamp":"2016-03-14T13:12:57.319Z"}
+{"level":"info","message":"Article with id: 56e5332582855d0b05bc0de1 updated","timestamp":"2016-03-14T13:13:11.613Z"}
+{"level":"info","message":"Article with id: 56e5322d0e0ed3ee04afbcfa updated","timestamp":"2016-03-14T13:13:11.616Z"}
+{"level":"info","message":"Article with id: 56e532c182855d0b05bc0ddd updated","timestamp":"2016-03-14T13:13:11.648Z"}
+{"level":"info","message":"Article with id: 56e69e5dcb9a1ea902782e3f updated","timestamp":"2016-03-14T13:26:10.265Z"}

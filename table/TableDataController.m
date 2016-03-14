@@ -6,11 +6,27 @@
 //  Copyright © 2016 Vlad. All rights reserved.
 //
 
+
 #import "TableDataController.h"
 #import "CellModel.h"
 #import "ImageModel.h"
 #import "TableViewCell.h"
 #import "ImageDataSource.h"
+
+@interface NSString (random)
++(NSString *)randomStringWithLength:(int)len;
+@end
+
+@implementation NSString (random)
++ (NSString *)randomStringWithLength:(int)len {
+    NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    NSMutableString *randomString = [NSMutableString stringWithCapacity: len];
+    for (int i=0; i<len; i++) {
+        [randomString appendFormat: @"%C", [letters characterAtIndex: arc4random_uniform([letters length])]];
+    }
+    return randomString;
+}
+@end
 
 NSString *const entityName = @"CellModel";
 NSString *const imageEntityName = @"ImageModel";
@@ -175,15 +191,6 @@ NSString *const myCellIdentifier = @"TableViewCell";
 {
     NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
     NSDictionary *cellModelData;
-    NSMutableArray *newArray = [dataArray mutableCopy];
-    for (cellModelData in dataArray)
-    {
-        if (![[cellModelData objectForKey:@"owner"]isEqualToString:_user])
-        {
-            [newArray removeObject:cellModelData];
-        }
-    }
-    dataArray = [NSArray arrayWithArray:newArray];
     NSArray *cellModelArray = [self cellModelArray];
     CellModel *cellModel;
     for (cellModel in cellModelArray)
@@ -191,7 +198,7 @@ NSString *const myCellIdentifier = @"TableViewCell";
         BOOL finded = NO;
         for (cellModelData in dataArray)
         {
-            if ([[cellModelData objectForKey:@"objectId"] isEqualToString: cellModel.objectId])
+            if ([[cellModelData objectForKey:@"_id"] isEqualToString: cellModel.objectId])
             {
                 finded = YES;
                 [cellModel updateCellWithDictionary:cellModelData];
@@ -211,7 +218,7 @@ NSString *const myCellIdentifier = @"TableViewCell";
         BOOL finded = NO;
         for (cellModel in cellModelArray)
         {
-            if ([[cellModelData objectForKey:@"objectId"] isEqualToString: cellModel.objectId])
+            if ([[cellModelData objectForKey:@"_id"] isEqualToString: cellModel.objectId])
             {
                 finded = YES;
                 break;
@@ -234,11 +241,17 @@ NSString *const myCellIdentifier = @"TableViewCell";
 - (NSDictionary *)cellDataAtIndexPath:(NSIndexPath *)indexPath
 {
     CellModel *cellModel = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    NSData *imageData = [self ImageDataWithURL:cellModel.imageUrl];
     NSDictionary *cellData = @{    @"title" : cellModel.title,
                                    @"subTitle" : cellModel.subTitle,
                                    @"content" : cellModel.content,
                                    @"imageUrl" : cellModel.imageUrl};
-    return cellData;
+    NSMutableDictionary *newCellData = [[NSMutableDictionary alloc] initWithDictionary:cellData];
+    if (imageData)
+    {
+        [newCellData setObject:imageData forKey:@"imageData"];
+    }
+    return newCellData;
 }
 
 - (void)updateCellModelFromCellData:(NSDictionary *)cellData atIndexPath:(NSIndexPath *)indexPath
@@ -247,6 +260,14 @@ NSString *const myCellIdentifier = @"TableViewCell";
     cellModel.title = [cellData valueForKey:@"title"];
     cellModel.subTitle = [cellData valueForKey:@"subTitle"];
     cellModel.content = [cellData valueForKey:@"content"];
+    NSData *imageData = [cellData valueForKey:@"imageData"];
+    if (imageData != nil)
+    {
+        cellModel.imageUrl = [NSString randomStringWithLength:15];
+        cellModel.imageData = imageData;
+        [self addImageFromData:imageData withURL:cellModel.imageUrl];
+    //    [self.syncController addImageFromData:imageData withURL:cellModel.imageUrl];
+    }
     [self.syncController updatedCellModel:cellModel];
 }
 

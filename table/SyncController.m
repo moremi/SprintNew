@@ -7,9 +7,7 @@
 //
 
 #import "SyncController.h"
-#import "NetworkController.h"
 @interface SyncController()
-@property (nonatomic,strong) NetworkController *networkController;
 @property (nonatomic,strong) NSMutableArray *updatedCellModels;
 @property (nonatomic,strong) NSMutableArray *deletedCellModels;
 @property (nonatomic,strong) NSMutableArray *createdCellModels;
@@ -18,11 +16,11 @@
 
 @implementation SyncController
 
-- (instancetype)init
+- (instancetype)initWithNetworkController:(NetworkController *)networkController;
 {
     self = [super init];
     if (self) {
-        self.networkController = [[NetworkController alloc] init];
+        self.networkController = networkController;
         self.updatedCellModels = [[NSMutableArray alloc] init];
         self.deletedCellModels = [[NSMutableArray alloc] init];
         self.createdCellModels = [[NSMutableArray alloc] init];
@@ -56,7 +54,6 @@
 
 - (void)syncModelsWithCompletion:(void (^)(NSError *, NSArray *))completion
 {
-    self.networkController.user = self.user;
     dispatch_group_t changesToServerDispatchGroup = dispatch_group_create();
     for (CellModel *cellModel in self.updatedCellModels)
     {

@@ -23,15 +23,19 @@
         {
             self.imageUrl = @"";
         }
-        self.objectId = [newData objectForKey:@"objectId"];
+        self.objectId = [newData objectForKey:@"_id"];
         self.updatedAt = [newData objectForKey:@"updatedAt"];
         self.content = [newData objectForKey:@"content"];
+        if (self.content == nil)
+        {
+            self.content = @"";
+        }
         
         //NSString *dateString = [[newData objectForKey:@"createdAt"] objectForKey:@"iso"];
-        NSString *dateString = [newData objectForKey:@"createdAt"];
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
-        self.createdAt = [dateFormatter dateFromString:dateString];
+//        NSString *dateString = [newData objectForKey:@"createdAt"];
+//        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+//        [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
+//        self.createdAt = [dateFormatter dateFromString:dateString];
     }
 }
 
